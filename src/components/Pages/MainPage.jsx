@@ -6,11 +6,17 @@ import TabSection from "./TabSection";
 import { useState } from "react";
 
 function MainPage(props) {
-  const [route, setRoute] = useState("all");
+  const [route, setRoute] = useState(
+    ["/all", "/your", "blocked"].includes(window.location.pathname)
+      ? window.location.pathname.replace("/", "")
+      : "all"
+  );
 
   const routeTo = (routeArg) => {
+    window.history.pushState({}, "", "/" + routeArg);
     setRoute(routeArg);
   };
+
   return (
     <div>
       <header className={styles["header"]}>
