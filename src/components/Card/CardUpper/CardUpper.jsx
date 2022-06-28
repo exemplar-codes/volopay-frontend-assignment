@@ -23,4 +23,16 @@ function CardUpper(props) {
   );
 }
 
+CardUpper.propTypes = {
+  name: PropTypes.string.isRequired,
+  ownerName: PropTypes.string.isRequired,
+  budgetName: PropTypes.string.isRequired,
+};
+
+CardUpper.defaultProps = {
+  name: "Mixmax",
+  ownerName: "Vishal",
+  budgetName: "Software Subscription",
+};
+
 export default CardUpper;
