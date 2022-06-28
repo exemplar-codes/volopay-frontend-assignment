@@ -1,0 +1,39 @@
+.card-upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+}
+
+.card-left {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-main-text {
+  font-size: 22px;
+}
+
+.card-secondary-text {
+  font-size: 14px;
+  color: #918a8a;
+}
+
+.fire-icon {
+  width: 45px;
+  aspect-ratio: 1;
+  background-color: rgb(254, 245, 247);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
