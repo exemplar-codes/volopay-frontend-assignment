@@ -5,7 +5,7 @@ import styles from "./CardMiddle.module.css";
 function CardMiddle(props) {
   return (
     <div className={styles["card-middle"]}>
-      <CardTypePill />
+      <CardTypePill cardType={props.cardType} />
       <div>
         {props.expiry
           ? `Expires: ${props.expiry}`
@@ -21,11 +21,13 @@ CardMiddle.propTypes = {
     currency: PropTypes.oneOf(["SGD", "USD", "INR"]),
   }),
   expiry: PropTypes.string,
+  cardType: PropTypes.oneOf(["burner", "subscription"]).isRequired,
 };
 
 CardMiddle.defaultProps = {
   limit: { value: 40, currency: "SGD" },
   expiry: "9 Feb",
+  cardType: "burner",
 };
 
 export default CardMiddle;

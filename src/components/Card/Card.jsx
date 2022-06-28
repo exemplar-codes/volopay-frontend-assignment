@@ -21,8 +21,6 @@ function Card(props) {
       />
       <br />
       <CardMiddle
-        spent={props.spent}
-        availableToSpend={props.availableToSpend}
         expiry={props.expiry}
         limit={props.lmit}
         cardType={props.cardType}
