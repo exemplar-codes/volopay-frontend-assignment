@@ -73,7 +73,7 @@ function TabSection(props) {
     <div>
       {rowWiseViews.map(([leftData, rightData], k) => (
         <div className={styles["row-style"]} key={k}>
-          <p>{k}</p>
+          {/* <p>{k}</p> */}
           <Card
             {...leftData}
             cardType={sectionCriteria() ? "burner" : "subscription"}
