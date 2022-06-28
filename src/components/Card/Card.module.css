@@ -1,0 +1,11 @@
+.card-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  width: 480px;
+  height: 185px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
