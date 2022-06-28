@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import styles from "./Card.module.css";
+import CardMiddle from "./CardMiddle/CardMiddle";
+import CardUpper from "./CardUpper/CardUpper";
+import CardLower from "./CardLower/CardLower";
 
 function Card(props) {
   return (
@@ -11,7 +14,23 @@ function Card(props) {
         }`,
       }}
     >
-      Hello
+      <CardUpper
+        name={props.name}
+        ownerName={props.ownerName}
+        budgetName={props.budgetName}
+      />
+      <br />
+      <CardMiddle
+        spent={props.spent}
+        availableToSpend={props.availableToSpend}
+        expiry={props.expiry}
+        limit={props.lmit}
+        cardType={props.cardType}
+      />
+      <CardLower
+        spent={props.spent}
+        availableToSpend={props.availableToSpend}
+      />
     </div>
   );
 }
