@@ -6,7 +6,7 @@ import { useState } from "react";
 let data = [
   {
     orderId: 0,
-    name: "Mixmax",
+    name: "Apple",
     ownerName: "Vishal",
     budgetName: "Software Subscription",
     cardType: "burner",
@@ -17,7 +17,7 @@ let data = [
   },
   {
     orderId: 1,
-    name: "Mixmax",
+    name: "Amazon",
     ownerName: "Vishal",
     budgetName: "Software Subscription",
     cardType: "subscription",
@@ -28,7 +28,7 @@ let data = [
   },
   {
     orderId: 2,
-    name: "Mixmax",
+    name: "Coca-Cola",
     ownerName: "Vishal",
     budgetName: "Software Subscription",
     cardType: "subscription",
@@ -64,9 +64,25 @@ function TabSection(props) {
     ...data,
     ...data,
   ]);
+
   const rowWiseViews = [];
-  for (let i = 0; i < viewsData.filter(sectionCriteria).length; i += 2) {
-    rowWiseViews.push([viewsData[i], viewsData[i + 1]]);
+  let filterByNameCriteria = () => true;
+
+  if (props.filterByNameKey) {
+    console.log("Name filter", props.filterByNameKey);
+    filterByNameCriteria = (viewData) =>
+      viewData.name.toLowerCase().includes(props.filterByNameKey);
+  }
+
+  // make row-wise pairs
+  let row = [];
+  for (const viewData of viewsData
+    .filter(sectionCriteria)
+    .filter((viewData) => filterByNameCriteria(viewData))) {
+    if (row.length === 2) {
+      rowWiseViews.push(row);
+      row = [viewData];
+    } else row.push(viewData);
   }
 
   return (

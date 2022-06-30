@@ -1,0 +1,5 @@
+.filtering {
+  display: flex;
+  justify-items: flex-end;
+  color: red;
+}
