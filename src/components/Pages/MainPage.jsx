@@ -44,7 +44,6 @@ let data = [
 const scrollLimit = 54;
 
 function coinToss() {
-  // return ["all", "your", "blocked"].indexOf(route) === viewData.orderId;
   return true//Math.random() > 0.5;
 }
 
