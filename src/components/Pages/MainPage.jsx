@@ -4,6 +4,7 @@ import styles from "./MainPage.module.css";
 import cameraIcon from "./../../shared/help-video-icon.png";
 import TabSection from "./TabSection";
 import { useState } from "react";
+import Filtering from "./Filtering/Filtering";
 
 function MainPage(props) {
   const [route, setRoute] = useState(
@@ -16,6 +17,8 @@ function MainPage(props) {
     window.history.pushState({}, "", "/" + routeArg);
     setRoute(routeArg);
   };
+
+  const [filterByNameKey, setFilterByNameKey] = useState("");
 
   return (
     <div>
@@ -51,7 +54,12 @@ function MainPage(props) {
         })}
       </nav>
       <hr />
-      <TabSection route={route} />
+      <Filtering
+        setFilterByNameKey={setFilterByNameKey}
+        filterByNameKey={filterByNameKey}
+      />
+      <br />
+      <TabSection route={route} filterByNameKey={filterByNameKey} />
     </div>
   );
 }
