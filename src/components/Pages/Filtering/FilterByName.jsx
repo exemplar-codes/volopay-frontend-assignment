@@ -5,7 +5,7 @@ function FilterByName(props) {
       value={props.filterByNameKey}
       onChange={(e) => {
         const inputText = e.target.value.toLocaleLowerCase();
-        if (inputText) props.setFilterByNameKey(inputText);
+        props.setFilterByNameKey(inputText);
       }}
     />
   );
