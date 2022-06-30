@@ -30,6 +30,7 @@ function FilterAndTab(props) {
       row = [viewData];
     } else row.push(viewData);
   }
+    
   return (
     <>
       <Filtering
