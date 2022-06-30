@@ -9,7 +9,11 @@ function GeneralFilter(props) {
   return (
     <div style={{ position: "relative" }}>
       {generalFilterActive && (
-        <GeneralFilterModal setGeneralFilterActive={setGeneralFilterActive} />
+        <GeneralFilterModal
+          setGeneralFilterActive={setGeneralFilterActive}
+          setFilterByCardType={props.setFilterByCardType}
+          filterByCardType={props.filterByCardType}
+        />
       )}
       <div
         style={{

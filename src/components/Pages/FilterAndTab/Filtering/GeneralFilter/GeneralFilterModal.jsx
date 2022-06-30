@@ -14,12 +14,33 @@ function GeneralFilterModal(props) {
           <br />
           <br />
           <div>
-            <label htmlFor="subscription-check" style={{ marginRight: "100px" }}>
-              <input type="checkbox" id="subscription-check" />
+            <label
+              htmlFor="subscription-check"
+              style={{ marginRight: "100px" }}
+            >
+              <input
+                type="checkbox"
+                id="subscription-check"
+                value={props.filterByCardType === "subscription" && "checked"}
+                onClick={() =>
+                  props.setFilterByCardType((prevState) =>
+                    prevState ? "" : "subscription"
+                  )
+                }
+              />
               Subscription
             </label>
             <label htmlFor="burner-check">
-              <input type="checkbox" id="burner-check" />
+              <input
+                type="checkbox"
+                id="burner-check"
+                value={props.filterByCardType === "burner" && "checked"}
+                onClick={() =>
+                  props.setFilterByCardType((prevState) =>
+                    prevState ? "" : "burner"
+                  )
+                }
+              />
               Burner
             </label>
           </div>
@@ -32,9 +53,7 @@ function GeneralFilterModal(props) {
             defaultValue="default"
             className={styles["select"]}
           >
-            <option value="default">
-              Select cardholder
-            </option>
+            <option value="default">Select cardholder</option>
             <option>1</option>
             <option>2</option>
           </select>

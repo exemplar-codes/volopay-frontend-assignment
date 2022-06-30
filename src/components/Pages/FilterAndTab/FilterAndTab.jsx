@@ -4,16 +4,21 @@ import TabSection from "./TabSection";
 
 function FilterAndTab(props) {
   const [filterByNameKey, setFilterByNameKey] = useState("");
+  const [filterByCardType, setFilterByCardType] = useState("");
+
   return (
     <>
       <Filtering
         setFilterByNameKey={setFilterByNameKey}
+        setFilterByCardType={setFilterByCardType}
         filterByNameKey={filterByNameKey}
+        filterByCardType={filterByCardType}
       />
       <TabSection
+        viewsData={props.viewsData}
         route={props.route}
         filterByNameKey={filterByNameKey}
-        viewsData={props.viewsData}
+        filterByCardType={filterByCardType}
       />
     </>
   );

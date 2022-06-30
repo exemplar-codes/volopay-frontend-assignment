@@ -12,7 +12,10 @@ function Filtering(props) {
         filterByNameKey={props.filterByNameKey}
       />
       &nbsp; &nbsp;
-      <GeneralFilter />
+      <GeneralFilter
+        setFilterByCardType={props.setFilterByCardType}
+        filterByCardType={props.filterByCardType}
+      />
     </div>
   );
 }

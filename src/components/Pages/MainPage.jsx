@@ -2,9 +2,7 @@ import PropTypes from "prop-types";
 import styles from "./MainPage.module.css";
 
 import cameraIcon from "./../../shared/help-video-icon.png";
-import TabSection from "./FilterAndTab/TabSection";
 import { useState } from "react";
-import Filtering from "./FilterAndTab/Filtering/Filtering";
 import FilterAndTab from "./FilterAndTab/FilterAndTab";
 
 let data = [
