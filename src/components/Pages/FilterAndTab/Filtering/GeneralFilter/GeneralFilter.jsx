@@ -14,7 +14,7 @@ function GeneralFilter(props) {
           setFilterByCardType={props.setFilterByCardType}
           setFilterByOwnerName={props.setFilterByOwnerName}
           filterByCardType={props.filterByCardType}
-          filterByOwnerName={props.filterByCardType}
+          filterByOwnerName={props.filterByOwnerName}
           ownerNames={props.ownerNames}
         />
       )}
