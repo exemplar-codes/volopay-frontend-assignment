@@ -53,12 +53,20 @@ function GeneralFilterModal(props) {
           <p>Cardholder</p>
           <select
             id="cardholder"
-            defaultValue="default"
+            defaultValue=""
             className={styles["select"]}
+            onChange={(e) => {
+              filter3 = () =>
+                props.setFilterByOwnerName((prevState) =>
+                  prevState ? "" : e.target.value
+                );
+            }}
           >
-            <option value="default">Select cardholder</option>
-            {props.ownerNames.map((ownerName) => (
-              <option value={ownerName}>{ownerName}</option>
+            <option value="">Select cardholder</option>
+            {props.ownerNames.map((ownerName, i) => (
+              <option value={ownerName} key={i}>
+                {ownerName}
+              </option>
             ))}
           </select>
         </div>

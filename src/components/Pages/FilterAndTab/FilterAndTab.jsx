@@ -7,20 +7,27 @@ function FilterAndTab(props) {
   const [filterByCardType, setFilterByCardType] = useState("");
   const [filterByOwnerName, setFilterByOwnerName] = useState("");
 
-  const filterByNameCriteria =filterByNameKey
+  const filterByNameCriteria = filterByNameKey
     ? (viewData) => viewData.name.toLowerCase().includes(filterByNameKey)
     : () => true;
 
-  const filterByCardTypeCriteria =filterByCardType
-    ? (viewData) => viewData.cardType ===filterByCardType
+  const filterByCardTypeCriteria = filterByCardType
+    ? (viewData) => viewData.cardType === filterByCardType
     : () => true;
 
-  const filteredViews =props.viewsData
+  const filterByOwnerNameCriteria = filterByOwnerName
+    ? (viewData) => viewData.ownerName === filterByOwnerName
+    : () => true;
+
+  let filteredViews = props.viewsData
     .filter(filterByNameCriteria)
     .filter(filterByCardTypeCriteria);
 
-  const ownerNames = filteredViews.map((viewData) => viewData.ownerName);
+  const ownerNames = [
+    ...new Set(filteredViews.map((viewData) => viewData.ownerName)),
+  ];
 
+  filteredViews = filteredViews.filter(filterByOwnerNameCriteria);
   // make row-wise pairs
   const rowWiseViewsData = [];
   let row = [];
@@ -39,7 +46,7 @@ function FilterAndTab(props) {
         setFilterByOwnerName={setFilterByOwnerName}
         filterByNameKey={filterByNameKey}
         filterByCardType={filterByCardType}
-        filterByOwnerName={filterByCardType}
+        filterByOwnerName={filterByOwnerName}
         ownerNames={ownerNames}
       />
       <TabSection rowWiseViewsData={rowWiseViewsData} />

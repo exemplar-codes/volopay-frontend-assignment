@@ -20,7 +20,7 @@ let data = [
   {
     orderId: 1,
     name: "Amazon",
-    ownerName: "Vishal",
+    ownerName: "Sanjar",
     budgetName: "Software Subscription",
     cardType: "subscription",
     availableToSpend: { value: 1000, currency: "SGD" },
@@ -31,7 +31,7 @@ let data = [
   {
     orderId: 2,
     name: "Coca-Cola",
-    ownerName: "Vishal",
+    ownerName: "Ahmar",
     budgetName: "Software Subscription",
     cardType: "subscription",
     availableToSpend: { value: 1000, currency: "SGD" },
