@@ -57,7 +57,8 @@
 .nav span {
   display: flex;
   justify-content: center;
-  width: 50px;
+  align-items: center;
+  width: 30px;
   margin-right: 20px;
   cursor: pointer;
   height: 30px;
