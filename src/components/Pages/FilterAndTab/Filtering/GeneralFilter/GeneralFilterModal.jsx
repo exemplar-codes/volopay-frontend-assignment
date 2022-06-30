@@ -56,10 +56,7 @@ function GeneralFilterModal(props) {
             defaultValue=""
             className={styles["select"]}
             onChange={(e) => {
-              filter3 = () =>
-                props.setFilterByOwnerName((prevState) =>
-                  prevState ? "" : e.target.value
-                );
+              filter3 = () => props.setFilterByOwnerName(e.target.value);
             }}
           >
             <option value="">Select cardholder</option>
