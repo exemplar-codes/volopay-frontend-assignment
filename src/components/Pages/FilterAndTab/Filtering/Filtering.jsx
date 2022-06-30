@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import FilterByName from "./FilterByName";
 import styles from "./Filtering.module.css";
 import GeneralFilter from "./GeneralFilter/GeneralFilter";
@@ -14,7 +12,10 @@ function Filtering(props) {
       &nbsp; &nbsp;
       <GeneralFilter
         setFilterByCardType={props.setFilterByCardType}
+        setFilterByOwnerName={props.setFilterByOwnerName}
         filterByCardType={props.filterByCardType}
+        filterByOwnerName={props.filterByCardType}
+        ownerNames={props.ownerNames}
       />
     </div>
   );

@@ -12,7 +12,10 @@ function GeneralFilter(props) {
         <GeneralFilterModal
           setGeneralFilterActive={setGeneralFilterActive}
           setFilterByCardType={props.setFilterByCardType}
+          setFilterByOwnerName={props.setFilterByOwnerName}
           filterByCardType={props.filterByCardType}
+          filterByOwnerName={props.filterByCardType}
+          ownerNames={props.ownerNames}
         />
       )}
       <div

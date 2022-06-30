@@ -54,8 +54,9 @@ function GeneralFilterModal(props) {
             className={styles["select"]}
           >
             <option value="default">Select cardholder</option>
-            <option>1</option>
-            <option>2</option>
+            {props.ownerNames.map((ownerName) => (
+              <option value={ownerName}>{ownerName}</option>
+            ))}
           </select>
         </div>
         <br />
