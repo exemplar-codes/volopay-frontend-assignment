@@ -1,17 +1,19 @@
 import { useState } from "react";
-import searchIcon from "../../../shared/search-50-icon.png";
-import FilterByName from "./FilterByName";
-import styles from "./Filtering.module.css";
+import searchIcon from "../../../../shared/search-50-icon.png";
 
-function Filtering(props) {
+function FilterByName(props) {
   const [filterByNameActive, setFilterByNameActive] = useState(false);
   return (
-    <div className={styles["filtering"]}>
+    <>
       {filterByNameActive ? (
         <>
-          <FilterByName
-            setFilterByNameKey={props.setFilterByNameKey}
-            filterByNameKey={props.filterByNameKey}
+          <input
+            type="text"
+            value={props.filterByNameKey}
+            onChange={(e) => {
+              const inputText = e.target.value.toLocaleLowerCase();
+              props.setFilterByNameKey(inputText);
+            }}
           />
           &nbsp;
           <button onClick={() => setFilterByNameActive(false)}>Back</button>
@@ -22,14 +24,16 @@ function Filtering(props) {
             backgroundColor: "#f6f6f6",
             borderRadius: "3px",
             padding: "3px",
+            display: "flex",
+            alignItems: "center",
           }}
           onClick={() => setFilterByNameActive(true)}
         >
           <img src={searchIcon} height="22px" alt="search-icon" />
         </div>
       )}
-    </div>
+    </>
   );
 }
 
-export default Filtering;
+export default FilterByName;

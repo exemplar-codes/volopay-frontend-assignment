@@ -1,0 +1,50 @@
+.general-filter-modal {
+  position: absolute;
+  top: 40px;
+  right: 150px;
+
+  width: calc(480px - 40px - 20px);
+  padding: 10px;
+  /* height: calc(185px * 2 - 20px); */
+
+  background-color: white;
+  border: 2px solid #dbd7d7;
+
+  border-radius: 4px;
+}
+
+.general-filter-modal-inner {
+  padding: 10px 30px 0px 30px;
+}
+
+.light-text {
+  color: #929292;
+}
+
+.ctas {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ctas div {
+  width: 150px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.select {
+  width: 350px;
+  height: 40px;
+  padding: 0px 30px 0px 10px;
+  font-size: 15px;
+
+  border-radius: 5px;
+  color: #929292;
+
+  border: none;
+}
