@@ -43,7 +43,7 @@ function MainPage(props) {
               onClick={() => routeTo(routeName)}
               style={
                 routeName === route
-                  ? { borderBottom: "3px solid darkorange" }
+                  ? { borderBottom: "5px solid darkorange" }
                   : {}
               }
               key={routeName}
@@ -52,8 +52,9 @@ function MainPage(props) {
             </span>
           );
         })}
+        <div></div>
       </nav>
-      <hr />
+      <br />
       <Filtering
         setFilterByNameKey={setFilterByNameKey}
         filterByNameKey={filterByNameKey}

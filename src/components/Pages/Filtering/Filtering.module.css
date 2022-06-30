@@ -1,5 +1,7 @@
 .filtering {
   display: flex;
-  justify-items: flex-end;
-  color: red;
+  justify-items: center;
+  align-items: flex-end;
+  /* border: 1px solid lime; */
+  width: 100%;
 }

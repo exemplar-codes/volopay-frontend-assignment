@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./CardUpper.module.css";
 
-import fireIcon from "../../../shared/icons8-fire-60.png";
+import fireIcon from "../../../shared/fire-60-icon.png";
 
 function CardUpper(props) {
   return (

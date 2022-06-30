@@ -38,11 +38,27 @@
 }
 
 .nav {
-  /* margin-right: 20px; */
+  position: relative;
+  height: 30px;
+  color: #918a8a;
+
+  display: flex;
+}
+
+.nav div {
+  position: absolute;
+  height: 1px;
+  bottom: -2.9px;
+  width: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #c1bfbf;
 }
 
 .nav span {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  width: 50px;
   margin-right: 20px;
   cursor: pointer;
+  height: 30px;
 }
