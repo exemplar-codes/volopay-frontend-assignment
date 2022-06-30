@@ -43,6 +43,11 @@ let data = [
 
 const scrollLimit = 54;
 
+function coinToss() {
+  // return ["all", "your", "blocked"].indexOf(route) === viewData.orderId;
+  return Math.random() > 0.5;
+}
+
 function MainPage(props) {
   const [route, setRoute] = useState(
     ["/all", "/your", "blocked"].includes(window.location.pathname)
@@ -72,6 +77,8 @@ function MainPage(props) {
     ...data,
     ...data,
   ]);
+
+  const filterByRouteCriteria = coinToss; // should use route state somehow, but leaving to random for now
 
   return (
     <div>
@@ -108,7 +115,7 @@ function MainPage(props) {
         <div></div>
       </nav>
       <br />
-      <FilterAndTab route={route} viewsData={viewsData} />
+      <FilterAndTab viewsData={viewsData.filter(filterByRouteCriteria)} />
     </div>
   );
 }

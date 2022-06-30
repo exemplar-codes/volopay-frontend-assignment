@@ -2,17 +2,10 @@ import { useState } from "react";
 import Filtering from "./Filtering/Filtering";
 import TabSection from "./TabSection";
 
-function coinToss() {
-  // return ["all", "your", "blocked"].indexOf(route) === viewData.orderId;
-  return Math.random() > 0.5;
-}
-
 function FilterAndTab(props) {
   const [filterByNameKey, setFilterByNameKey] = useState("");
   const [filterByCardType, setFilterByCardType] = useState("");
   const [filterByOwnerName, setFilterByOwnerName] = useState("");
-
-  const filterByRouteCriteria = coinToss;
 
   const filterByNameCriteria = props.filterByNameKey
     ? (viewData) => viewData.name.toLowerCase().includes(props.filterByNameKey)
@@ -23,7 +16,6 @@ function FilterAndTab(props) {
     : () => true;
 
   const filteredViews = props.viewsData
-    .filter(filterByRouteCriteria)
     .filter(filterByNameCriteria)
     .filter(filterByCardTypeCriteria);
 
@@ -51,7 +43,6 @@ function FilterAndTab(props) {
       />
       <TabSection
         rowWiseViewsData={rowWiseViewsData}
-        route={props.route}
         filterByNameKey={filterByNameKey}
         filterByCardType={filterByCardType}
         filterByOwnerName={filterByCardType}
