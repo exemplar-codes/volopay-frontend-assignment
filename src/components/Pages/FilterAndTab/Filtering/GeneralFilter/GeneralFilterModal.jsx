@@ -2,6 +2,7 @@ import styles from "./GeneralFilterModal.module.css";
 import { PinkRed } from "../../../../../shared/sharedAssets";
 
 function GeneralFilterModal(props) {
+  let filter1, filter2, filter3;
   return (
     <div className={styles["general-filter-modal"]}>
       {/* Modal <span>"General Filter On"</span>
@@ -23,9 +24,10 @@ function GeneralFilterModal(props) {
                 id="subscription-check"
                 value={props.filterByCardType === "subscription" && "checked"}
                 onClick={() =>
-                  props.setFilterByCardType((prevState) =>
-                    prevState ? "" : "subscription"
-                  )
+                  (filter1 = () =>
+                    props.setFilterByCardType((prevState) =>
+                      prevState ? "" : "subscription"
+                    ))
                 }
               />
               Subscription
@@ -36,9 +38,10 @@ function GeneralFilterModal(props) {
                 id="burner-check"
                 value={props.filterByCardType === "burner" && "checked"}
                 onClick={() =>
-                  props.setFilterByCardType((prevState) =>
-                    prevState ? "" : "burner"
-                  )
+                  (filter2 = () =>
+                    props.setFilterByCardType((prevState) =>
+                      prevState ? "" : "burner"
+                    ))
                 }
               />
               Burner
@@ -61,7 +64,16 @@ function GeneralFilterModal(props) {
         </div>
         <br />
         <div className={styles["ctas"]}>
-          <div style={{ backgroundColor: PinkRed, color: "white" }}>Apply</div>
+          <div
+            style={{ backgroundColor: PinkRed, color: "white" }}
+            onClick={() => {
+              filter1 && filter1();
+              filter2 && filter2();
+              filter3 && filter3();
+            }}
+          >
+            Apply
+          </div>
           <div
             style={{ boxShadow: "0px 0px 3px 3px #f5f5f5" }}
             onClick={() => props.setGeneralFilterActive(false)}
