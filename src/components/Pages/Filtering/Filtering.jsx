@@ -7,29 +7,27 @@ function Filtering(props) {
   const [filterByNameActive, setFilterByNameActive] = useState(false);
   return (
     <div className={styles["filtering"]}>
-      <div>
-        {filterByNameActive ? (
-          <>
-            <FilterByName
-              setFilterByNameKey={props.setFilterByNameKey}
-              filterByNameKey={props.filterByNameKey}
-            />
-            &nbsp;
-            <button onClick={() => setFilterByNameActive(false)}>Back</button>
-          </>
-        ) : (
-          <div
-            style={{
-              backgroundColor: "#f6f6f6",
-              borderRadius: "3px",
-              padding: "3px",
-            }}
-            onClick={() => setFilterByNameActive(true)}
-          >
-            <img src={searchIcon} height="22px" alt="search-icon" />
-          </div>
-        )}
-      </div>
+      {filterByNameActive ? (
+        <>
+          <FilterByName
+            setFilterByNameKey={props.setFilterByNameKey}
+            filterByNameKey={props.filterByNameKey}
+          />
+          &nbsp;
+          <button onClick={() => setFilterByNameActive(false)}>Back</button>
+        </>
+      ) : (
+        <div
+          style={{
+            backgroundColor: "#f6f6f6",
+            borderRadius: "3px",
+            padding: "3px",
+          }}
+          onClick={() => setFilterByNameActive(true)}
+        >
+          <img src={searchIcon} height="22px" alt="search-icon" />
+        </div>
+      )}
     </div>
   );
 }
