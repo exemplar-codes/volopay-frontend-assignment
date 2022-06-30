@@ -7,15 +7,15 @@ function FilterAndTab(props) {
   const [filterByCardType, setFilterByCardType] = useState("");
   const [filterByOwnerName, setFilterByOwnerName] = useState("");
 
-  const filterByNameCriteria = props.filterByNameKey
-    ? (viewData) => viewData.name.toLowerCase().includes(props.filterByNameKey)
+  const filterByNameCriteria =filterByNameKey
+    ? (viewData) => viewData.name.toLowerCase().includes(filterByNameKey)
     : () => true;
 
-  const filterByCardTypeCriteria = props.filterByCardType
-    ? (viewData) => viewData.cardType === props.filterByCardType
+  const filterByCardTypeCriteria =filterByCardType
+    ? (viewData) => viewData.cardType ===filterByCardType
     : () => true;
 
-  const filteredViews = props.viewsData
+  const filteredViews =props.viewsData
     .filter(filterByNameCriteria)
     .filter(filterByCardTypeCriteria);
 
