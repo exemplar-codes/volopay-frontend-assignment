@@ -45,7 +45,7 @@ const scrollLimit = 54;
 
 function coinToss() {
   // return ["all", "your", "blocked"].indexOf(route) === viewData.orderId;
-  return Math.random() > 0.5;
+  return true//Math.random() > 0.5;
 }
 
 function MainPage(props) {
