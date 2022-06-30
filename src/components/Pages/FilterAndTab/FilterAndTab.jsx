@@ -30,7 +30,7 @@ function FilterAndTab(props) {
       row = [viewData];
     } else row.push(viewData);
   }
-    
+
   return (
     <>
       <Filtering
@@ -42,12 +42,7 @@ function FilterAndTab(props) {
         filterByOwnerName={filterByCardType}
         ownerNames={ownerNames}
       />
-      <TabSection
-        rowWiseViewsData={rowWiseViewsData}
-        filterByNameKey={filterByNameKey}
-        filterByCardType={filterByCardType}
-        filterByOwnerName={filterByCardType}
-      />
+      <TabSection rowWiseViewsData={rowWiseViewsData} />
     </>
   );
 }

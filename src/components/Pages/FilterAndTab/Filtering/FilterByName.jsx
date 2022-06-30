@@ -11,7 +11,7 @@ function FilterByName(props) {
             type="text"
             value={props.filterByNameKey}
             onChange={(e) => {
-              const inputText = e.target.value.toLocaleLowerCase();
+              const inputText = e.target.value.trim().toLocaleLowerCase();
               props.setFilterByNameKey(inputText);
             }}
           />
